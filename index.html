@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Solar System Project(Michael Quaye FCM.41.008.137.24)</title>
+	<script src="script/aframe.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden; background: #020b3a;">
+	<a-scene renderer="antialias: true; colorManagement: true" background="color: #020b3a" loading-screen="enabled: false">
+		<a-assets>
+			<img id="starsTex" src="texture/2k_stars_milky_way.jpg" />
+			<img id="sunTex" src="texture/2k_sun.jpg" />
+			<img id="mercuryTex" src="texture/2k_mercury.jpg" />
+			<img id="venusTex" src="texture/2k_venus_surface.jpg" />
+			<img id="earthTex" src="texture/2k_earth_daymap.jpg" />
+			<img id="moonTex" src="texture/2k_moon.jpg" />
+			<img id="marsTex" src="texture/2k_mars.jpg" />
+			<img id="jupiterTex" src="texture/2k_jupiter.jpg" />
+			<img id="saturnTex" src="texture/2k_saturn.jpg" />
+			<img id="saturnRingTex" src="texture/2k_saturn_ring_alpha.png" />
+			<img id="uranusTex" src="texture/2k_uranus.jpg" />
+			<img id="neptuneTex" src="texture/2k_neptune.jpg" />
+		</a-assets>
+
+		<a-sky src="#starsTex" rotation="0 -60 0"></a-sky>
+
+		<a-entity light="type: ambient; color: #cfd8ff; intensity: 0.55"></a-entity>
+		<a-entity light="type: point; color: #ffd08a; intensity: 2.4; distance: 220" position="-26 0 2"></a-entity>
+
+		<a-camera position="8 1 68" look-controls="enabled: false"></a-camera>
+
+		<a-entity id="solar-system" position="-26 0 0">
+			<a-sphere
+				position="0 0 0"
+				radius="7.2"
+				src="#sunTex"
+				segments-height="48"
+				segments-width="48"
+				material="emissive: #ff9f40; emissiveIntensity: 1.1"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 60000; easing: linear"
+			></a-sphere>
+			<a-text value="SUN" color="#ffffff" position="-0.2 -10.5 0" align="center" width="24"></a-text>
+
+			<a-ring position="0 0 0" radius-inner="11.95" radius-outer="12.05" color="#7f8eb8" material="opacity: 0.55; transparent: true"></a-ring>
+			<a-ring position="0 0 0" radius-inner="17.95" radius-outer="18.05" color="#7f8eb8" material="opacity: 0.55; transparent: true"></a-ring>
+			<a-ring position="0 0 0" radius-inner="24.95" radius-outer="25.05" color="#7f8eb8" material="opacity: 0.55; transparent: true"></a-ring>
+			<a-ring position="0 0 0" radius-inner="31.95" radius-outer="32.05" color="#7f8eb8" material="opacity: 0.55; transparent: true"></a-ring>
+			<a-ring position="0 0 0" radius-inner="40.95" radius-outer="41.05" color="#7f8eb8" material="opacity: 0.55; transparent: true"></a-ring>
+			<a-ring position="0 0 0" radius-inner="50.95" radius-outer="51.05" color="#7f8eb8" material="opacity: 0.55; transparent: true"></a-ring>
+			<a-ring position="0 0 0" radius-inner="58.95" radius-outer="59.05" color="#7f8eb8" material="opacity: 0.55; transparent: true"></a-ring>
+			<a-ring position="0 0 0" radius-inner="66.95" radius-outer="67.05" color="#7f8eb8" material="opacity: 0.55; transparent: true"></a-ring>
+			<a-ring position="0 0 0" radius-inner="73.95" radius-outer="74.05" color="#7f8eb8" material="opacity: 0.55; transparent: true"></a-ring>
+
+			<a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 6000; easing: linear">
+				<a-sphere position="12 0 0" radius="1.5" src="#mercuryTex" animation="property: rotation; to: 0 360 0; loop: true; dur: 3500; easing: linear"></a-sphere>
+				<a-text value="MERCURY" color="#ffffff" position="12 -3.8 0" align="center" width="20"></a-text>
+			</a-entity>
+
+			<a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 9000; easing: linear">
+				<a-sphere position="18 0 0" radius="2.15" src="#venusTex" animation="property: rotation; to: 0 360 0; loop: true; dur: 4200; easing: linear"></a-sphere>
+				<a-text value="VENUS" color="#ffffff" position="18 4.6 0" align="center" width="20"></a-text>
+			</a-entity>
+
+			<a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 12500; easing: linear">
+				<a-entity position="25 0 0">
+					<a-sphere radius="2.2" src="#earthTex" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"></a-sphere>
+					<a-text value="EARTH" color="#ffffff" position="0 -5 0" align="center" width="20"></a-text>
+
+					<a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 2500; easing: linear">
+						<a-sphere position="4.2 0 0" radius="0.7" src="#moonTex"></a-sphere>
+						<a-text value="MOON" color="#ffffff" position="4.2 2 0" align="center" width="12"></a-text>
+					</a-entity>
+				</a-entity>
+			</a-entity>
+
+			<a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 15500; easing: linear">
+				<a-sphere position="32 0 0" radius="1.7" src="#marsTex" animation="property: rotation; to: 0 360 0; loop: true; dur: 3200; easing: linear"></a-sphere>
+				<a-text value="MARS" color="#ffffff" position="32 -4.2 0" align="center" width="16"></a-text>
+			</a-entity>
+
+			<a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 22000; easing: linear">
+				<a-sphere position="41 0 0" radius="4.3" src="#jupiterTex" animation="property: rotation; to: 0 360 0; loop: true; dur: 2200; easing: linear"></a-sphere>
+				<a-text value="JUPITER" color="#ffffff" position="41 -6.8 0" align="center" width="22"></a-text>
+			</a-entity>
+
+			<a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 30000; easing: linear">
+				<a-entity position="51 0 0" rotation="0 0 -20">
+					<a-sphere radius="3.5" src="#saturnTex" animation="property: rotation; to: 0 360 0; loop: true; dur: 2400; easing: linear"></a-sphere>
+					<a-ring
+						radius-inner="4.6"
+						radius-outer="6.4"
+						src="#saturnRingTex"
+						material="side: double; transparent: true; opacity: 0.9"
+						rotation="0 0 20"
+					></a-ring>
+					<a-text value="SATURN" color="#ffffff" position="0 -6.2 0" align="center" width="20"></a-text>
+				</a-entity>
+			</a-entity>
+
+			<a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 39000; easing: linear">
+				<a-sphere position="59 0 0" radius="2.85" src="#uranusTex" animation="property: rotation; to: 0 360 0; loop: true; dur: 2500; easing: linear"></a-sphere>
+				<a-text value="URANUS" color="#ffffff" position="59 -5.5 0" align="center" width="20"></a-text>
+			</a-entity>
+
+			<a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 47000; easing: linear">
+				<a-sphere position="67 0 0" radius="2.7" src="#neptuneTex" animation="property: rotation; to: 0 360 0; loop: true; dur: 2600; easing: linear"></a-sphere>
+				<a-text value="NEPTUNE" color="#ffffff" position="67 4.5 0" align="center" width="20"></a-text>
+			</a-entity>
+
+			<a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 56000; easing: linear">
+				<a-sphere position="74 0 0" radius="1.05" src="#moonTex" material="color: #e4c19a" animation="property: rotation; to: 0 360 0; loop: true; dur: 2900; easing: linear"></a-sphere>
+				<a-text value="PLUTO" color="#ffffff" position="74 2.8 0" align="center" width="14"></a-text>
+			</a-entity>
+		</a-entity>
+	</a-scene>
+</body>
+</html>
